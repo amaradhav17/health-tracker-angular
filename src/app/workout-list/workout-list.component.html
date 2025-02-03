@@ -1,0 +1,84 @@
+<div class="workout-table-container">
+  <div class="filter-section">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="applyFilters()"
+      placeholder="Search by name"
+      class="search-input"
+    />
+    <select
+      [(ngModel)]="filterType"
+      (change)="applyFilters()"
+      class="filter-select"
+    >
+      <option value="">Filter by workout type</option>
+      <option value="All">All</option>
+      <option value="Running">Running</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Yoga">Yoga</option>
+      <option value="Meditation">Meditation</option>
+    </select>
+  </div>
+
+  <div class="table-container">
+    <table class="workout-table">
+      <thead>
+        <tr>
+          <th class="table-header">Name</th>
+          <th class="table-header">Workouts</th>
+          <th class="table-header">Number of Workouts</th>
+          <th class="table-header">Total Workout Minutes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of paginatedUsers" class="table-row">
+          <td class="table-cell">{{ user.name }}</td>
+          <td class="table-cell">{{ getWorkoutTypes(user) }}</td>
+          <td class="table-cell">{{ user.workouts.length }}</td>
+          <td class="table-cell">{{ getTotalWorkoutMinutes(user) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination-container">
+    <button
+      (click)="goToPage(currentPage - 1)"
+      [disabled]="currentPage === 1"
+      class="pagination-button"
+    >
+      &lt;&lt; Previous
+    </button>
+    <button
+      *ngFor="let page of pagesArray"
+      (click)="goToPage(page)"
+      [class.active-page]="currentPage === page"
+      class="pagination-button"
+    >
+      {{ page }}
+    </button>
+    <button
+      (click)="goToPage(currentPage + 1)"
+      [disabled]="currentPage === pagesArray.length"
+      class="pagination-button"
+    >
+      Next &gt;&gt;
+    </button>
+
+    <div class="items-per-page">
+      <label for="itemsPerPage">Items per page: </label>
+      <select
+        id="itemsPerPage"
+        [(ngModel)]="itemsPerPage"
+        (change)="updateItemsPerPage()"
+        class="items-per-page-select"
+      >
+        <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<main class="workout-form">
+  <div class="form-container">
+    <label class="form-label">Add Workout</label>
+    <form #workoutForm="ngForm" (ngSubmit)="onSubmit(workoutForm)" class="form">
+      <div class="input-group">
+        <label class="input-label">User Name *</label>
+        <input
+          type="text"
+          name="username"
+          [(ngModel)]="workout.username"
+          required
+          class="input-field"
+        />
+      </div>
+      <div class="input-group flex">
+        <div class="input-half">
+          <label class="input-label">Workout Type *</label>
+          <select
+            name="workoutType"
+            [(ngModel)]="workout.workoutType"
+            required
+            class="input-field"
+          >
+            <option value="Cycling">Cycling</option>
+            <option value="Running">Running</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Meditation">Meditation</option>
+          </select>
+        </div>
+        <div class="input-half">
+          <label class="input-label">Workout Minutes *</label>
+          <input
+            type="number"
+            name="workoutMinutes"
+            [(ngModel)]="workout.workoutMinutes"
+            required
+            class="input-field"
+          />
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="submit-btn"
+      >
+        Add Workout
+      </button>
+    </form>
+  </div>
+</main>

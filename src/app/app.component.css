@@ -1,0 +1,86 @@
+/* Header styles */
+.header {
+  background-color: #003366; /* Dark blue background */
+  color: #e0e0e0; /* Light gray text */
+  padding: 1.5rem 2rem; /* Adjusted padding for more spacious look */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for depth */
+  font-family: 'Arial', sans-serif; /* Sans-serif font for a modern look */
+  border-bottom: 2px solid #004080; /* Blue bottom border for a sleek finish */
+}
+
+/* Container to center the content */
+.container {
+  max-width: 1200px; /* Adjusted width for better layout */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styles */
+.logo {
+  font-size: 1.75rem; /* Increased font size for better visibility */
+  font-weight: 600; /* Stronger font weight for emphasis */
+  text-transform: uppercase; /* Uppercase letters for a bolder look */
+  letter-spacing: 2px; /* Spacing between letters */
+  color: #ffffff; /* White text for logo */
+}
+
+/* Navigation links for desktop */
+.nav-links {
+  display: none; /* Hidden by default for mobile */
+  list-style: none;
+  display: flex;
+  gap: 3rem; /* Larger gap between items */
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #e0e0e0; /* Light gray text for better readability */
+  font-size: 1.1rem; /* Slightly larger font size */
+  transition: color 0.3s ease, transform 0.2s ease; /* Added transform effect for hover */
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+  color: #0099ff; /* Blue accent color on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Mobile navigation styles */
+.mobile-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.mobile-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.mobile-item {
+  text-decoration: none;
+  color: #e0e0e0; /* Light gray text */
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.mobile-item:hover {
+  text-decoration: underline;
+  color: #0099ff; /* Blue accent color on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .nav-links {
+      display: flex; /* Show navigation links on medium screens and up */
+  }
+
+  .mobile-nav {
+      display: none; /* Hide mobile navigation on larger screens */
+  }
+}

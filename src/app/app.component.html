@@ -1,0 +1,24 @@
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <legend class="logo">Health Tracker</legend>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" class="nav-item">Home</a></li>
+        <li><a href="#" class="nav-item">Workout List</a></li>
+        <li><a href="#" class="nav-item">Progress</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="mobile-nav">
+    <ul class="mobile-links">
+      <li><a routerLink="/workout-form" class="mobile-item">Home</a></li>
+      <li><a routerLink="/workout-list" class="mobile-item" onclick="return false;">Workout List</a></li>
+      <li><a routerLink="" class="mobile-item">Progress</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Workout Form -->
+<router-outlet></router-outlet>
