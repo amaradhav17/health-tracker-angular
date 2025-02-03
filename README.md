@@ -1,5 +1,5 @@
 # health-tracker-angular
-**Health Challenge Tracker** is a single-page Angular 17 app that lets users log, search, and filter workouts, while also offering optional chart visualizations for progress tracking.
+**Health Challenge Tracker** is a single-page Angular 17 app that lets users log, search, and filter workouts.
 
 ### Key Features:
 - **Workout Form**: Input name, workout type, and duration.
